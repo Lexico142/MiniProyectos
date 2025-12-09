@@ -92,8 +92,7 @@ public class Main {
                     src.nextLine();
                     nombre = src.nextLine();
 
-                    System.out.println("Tu personaje se llama " + nombre + " y es un " + clase + ".");
-                    System.out.println("¿Estás seguro? (true/false)");
+                    System.out.println("Tu personaje se llama " + nombre + " y es un " + clase + "." + " Estás seguro? (true/false)");
                     seguro = src.nextBoolean();
                 }
 
@@ -122,9 +121,9 @@ public class Main {
                             vivo = false;
                         }
                     } else {
-                        int probTaberna = (int) (Math.random() * 100) + 1;
-                        if (probTaberna >= 50) taberna();
-
+                        if (Math.random() < 0.5) {
+                            taberna();
+                        }
                     }
                 }
             }
@@ -526,9 +525,9 @@ public class Main {
                 objetosTienda[i] = recompensas[(int) (Math.random() * recompensas.length)];
 
                 if (objetosTienda[i].equals("Amuleto Crítico")) {
-                    preciosTienda[i] = (int) (Math.random() * 20) + 40; // 40-60 oro
+                    preciosTienda[i] = (int) (Math.random() * 20) + 40;
                 } else {
-                    preciosTienda[i] = (int) (Math.random() * 30) + 10; // 10-40 oro
+                    preciosTienda[i] = (int) (Math.random() * 30) + 10;
                 }
 
                 System.out.print("[" + (i + 1) + "] " + objetosTienda[i] + " - " + preciosTienda[i] + " oro");
