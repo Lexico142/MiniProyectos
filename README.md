@@ -6,7 +6,7 @@ Dunventure es un RPG de texto infinito desarrollado en Java donde exploras mazmo
 
 Combate y Progresión: Enfréntate a enemigos que se vuelven más fuertes tras cada victoria. Gana oro y experiencia para sobrevivir más tiempo.
 
-Objetos y Lugares
+## Objetos y Lugares
 Durante tu aventura encontrarás recursos vitales para tu supervivencia:
 
 La Taberna: Un lugar seguro que aparece aleatoriamente entre combates. Aquí puedes gastar tu oro para comprar suministros.
