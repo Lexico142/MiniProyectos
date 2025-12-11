@@ -1,10 +1,16 @@
 # Dunventure
-Dunventure es un RPG de texto infinito desarrollado en Java donde exploras mazmorras y luchas por sobrevivir.
+Dunventure es un juego RPG creado en Java para terminal. El juego es infinito hasta morir.
 
 ## Características Principales
-5 Clases Únicas: Elige entre Humano, Elfo, Demonio, Dragón o Enano, cada uno con estadísticas y habilidades distintas.
+Clases únicas: te pedirá nombre y raza. Siendo estas 5 clases únicas. Cada uno con unas estadísticas diferentes.
 
-Combate y Progresión: Enfréntate a enemigos que se vuelven más fuertes tras cada victoria. Gana oro y experiencia para sobrevivir más tiempo.
+- Elfo
+- Humano
+- Demonio
+- Enano
+- Dragón
+
+Combate y Progresión: Enfréntate a enemigos que se vuelven más fuertes tras cada victoria. Gana oro y experiencia para sobrevivir más tiempo y poder comprar mejoras.
 
 ## Objetos y Lugares
 Durante tu aventura encontrarás recursos vitales para tu supervivencia:
