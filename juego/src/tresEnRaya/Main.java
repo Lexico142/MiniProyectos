@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
     public static Scanner src = new Scanner(System.in);
 
     public static int tamano = 3;
@@ -22,7 +21,7 @@ public class Main {
     public static boolean empate = false;
     public static char turno = 'X';
 
-
+    // Método principal que inicia el juego
     static void main(String[] args) throws InterruptedException {
 
         boolean enMenu = true;
@@ -60,9 +59,10 @@ public class Main {
                 Thread.sleep(500);
             }
         }
-        System.out.println("\nGracias por jugar.");
+        System.out.println("\nGracias por jugar!!!");
     }
 
+    // Muestra el menú principal con las opciones disponibles
     public static void mostrarMenu() {
         System.out.println("\n=== MENÚ PRINCIPAL ===");
         System.out.println("1. Jugar Partida");
@@ -71,6 +71,7 @@ public class Main {
         System.out.print("Elige una opción: ");
     }
 
+    // Permite configurar el tamaño del tablero y las victorias necesarias
     public static void config() throws InterruptedException {
         System.out.println("\n=== CONFIGURACIÓN ===");
 
@@ -84,13 +85,14 @@ public class Main {
         Thread.sleep(1000);
     }
 
+    // Muestra las estadísticas totales de victorias de cada jugador
     public static void mostrarEstadisticas() {
         System.out.println("\n=== HISTORIAL ===");
         System.out.println(nombre1 + ": " + victoriasTotales1 + " victorias.");
         System.out.println(nombre2 + ": " + victoriasTotales2 + " victorias.");
     }
 
-
+    // Prepara y gestiona una partida
     public static void prepararPartida() throws InterruptedException {
         src.nextLine();
 
@@ -130,6 +132,7 @@ public class Main {
         }
     }
 
+    // Ejecuta una ronda completa del juego hasta que haya ganador o empate
     public static void jugarRonda() throws InterruptedException {
         System.out.println("\n=== NUEVA RONDA ===");
         Thread.sleep(1000);
@@ -179,6 +182,7 @@ public class Main {
         }
     }
 
+    // Inicializa el tablero con guiones (casillas vacías)
     public static void prepararTablero() {
         for (int i = 0; i < tamano; i++) {
             for (int j = 0; j < tamano; j++) {
@@ -187,6 +191,7 @@ public class Main {
         }
     }
 
+    // Elige aleatoriamente quién comienza (X u O)
     public static void sorteoTurno() {
         if (Math.random() < 0.5) {
             turno = 'X';
@@ -195,6 +200,7 @@ public class Main {
         }
     }
 
+    // Cambia el turno al otro jugador
     public static void cambiarTurno() {
         if (turno == 'X') {
             turno = 'O';
@@ -203,6 +209,7 @@ public class Main {
         }
     }
 
+    // Dibuja el tablero actual en la consola
     public static void dibujarTablero() {
         System.out.println();
         for (int i = 0; i < tamano; i++) {
@@ -214,6 +221,7 @@ public class Main {
         System.out.println();
     }
 
+    // Pide al jugador que introduzca sus coordenadas y valida la jugada
     public static void hacerTurno() throws InterruptedException {
         int fila;
         int columna;
@@ -241,7 +249,9 @@ public class Main {
         }
     }
 
+    // Verifica si el jugador actual ha ganado (filas, columnas o diagonales)
     public static void verificarGanador() {
+        // Verificar filas
         for (int i = 0; i < tamano; i++) {
             boolean filaCompleta = true;
             for (int j = 0; j < tamano; j++) {
@@ -250,6 +260,7 @@ public class Main {
             if (filaCompleta) ganador = true;
         }
 
+        // Verificar columnas
         for (int j = 0; j < tamano; j++) {
             boolean colCompleta = true;
             for (int i = 0; i < tamano; i++) {
@@ -258,12 +269,14 @@ public class Main {
             if (colCompleta) ganador = true;
         }
 
+        // Verificar diagonal principal
         boolean d1 = true;
         for (int i = 0; i < tamano; i++) {
             if (tablero[i][i] != turno) d1 = false;
         }
         if (d1) ganador = true;
 
+        // Verificar diagonal inversa
         boolean d2 = true;
         for (int i = 0; i < tamano; i++) {
             if (tablero[i][tamano - 1 - i] != turno) d2 = false;
